@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}
+Login Page
+
+{% endblock %} 
+
+
+
+{% block content %}
+<body class ="text-center"> 
+    
+
+    <div class="container">
+    <form method="POST" class="form-signin" style ="color:white">
+        {{ form.hidden_tag() }}
+        <br>
+        <br>
+        <i class="bi bi-arrow-right-circle"></i>
+        <h1> Please Login</h1>
+        <br>
+        
+        
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+        </svg>
+        
+        <br>
+        <br>
+        {{ form.username.label() }}
+        {{ form.username(class="form-control", placeholder="User Name") }}
+       
+        {{ form.password.label() }}
+        {{ form.password(class="form-control", placeholder="Password") }}
+        
+        <br>
+        {{ form.submit(class="btn btn-lg btn-block btn-dark ") }}
+        
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="checkbox mb-3">
+            <h4> Dont have an account? </h4>
+            <a class= "btn btn-sm btn-secondary" href="{{ url_for('register') }}"> Register</a>
+
+
+        </div>    
+    
+    
+    </form>
+    </div>
+</body>
+{% endblock %}
